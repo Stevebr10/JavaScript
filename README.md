@@ -1,1 +1,1 @@
-## JavaScriot Brandon Oña
+## JavaScript Brandon Oña
