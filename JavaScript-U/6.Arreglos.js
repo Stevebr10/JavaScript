@@ -37,3 +37,5 @@ let numeroArreglo2 = [13, 21, 0, 0, 62]
 for(let i=0; i<numeroArreglo2.length; i++){
     console.log(`${numeroArreglo2[i]}`)
 }
+
+
