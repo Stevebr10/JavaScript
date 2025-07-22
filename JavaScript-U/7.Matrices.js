@@ -33,3 +33,33 @@ for (let fila of matriz){
 //Usando console.table
 
 console.table(matriz)
+
+//Ejemplo
+const inventario = [
+    // Estante 0 fila 1
+    [
+        { nombre: "iPhone 15", stock: 10, precio: 999 }, //columna 1
+        { nombre: "Samsung S23", stock: 5, precio: 899 },  // columna 2
+        { nombre: "Pixel 7", stock: 8, precio: 699 }
+    ],
+    // Estante 1  fila 2
+    [
+        { nombre: "MacBook Air", stock: 3, precio: 1099 },
+        { nombre: "Dell XPS", stock: 7, precio: 1299 },
+        { nombre: "HP Pavilion", stock: 2, precio: 599 }
+    ]
+];
+
+//Búsqueda de Productos con Stock Crítico (< 5 unidades)
+for(let i=0; i<inventario.length; i++){
+    for(let j=0; j<inventario[i].length; j++){
+        const producto = inventario[i][j]
+        if(producto.stock<5){
+            console.log(`Alerta de Stock el producto ${producto.nombre} tiene menos de ${producto.stock} unidades`)
+        }
+    }
+
+}
+
+//Sintaxis simplificada de la matriz
+let matriz2 = [[100,200,300],[400,500,600]]
