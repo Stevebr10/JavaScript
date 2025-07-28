@@ -37,3 +37,23 @@ function imprimirSuma(a,b){
 //Llamada al procedimiento
 imprimirSuma(5,6)
 
+//Tipos de funciones
+//Fucniones declarativas: Son las funciones que se definen con la palabra clave function
+//Fucniones expresivas: Son las funciones que se definen como una variable  
+//Fucniones flecha: Son las funciones que se definen con la sintaxis de flecha
+//Fucniones anonimas: Son las funciones que no tienen nombre
+//Fucniones de orden superior: Son las funciones que reciben otras funciones como parametros o devuelven funciones como resultado
+//Fucniones recursivas: Son las funciones que se llaman a si mismas
+//Funciones definidas por el usuario: Son las funciones que se definen por el usuario
+//Funciones predefinidas: Son las funciones que ya estan definidas en el lenguaje en este caso JS
+
+//Ejemplo de Procedimiento
+//Definicion de un procedimiento -> El procedimiento al parecer no devuelve un valor pero en realidad 
+// regresa undefined
+function saludar(mesaje){
+    console.log(`Mensaje: ${mesaje}`)
+}
+
+//Llamada al procedimiento
+saludar("Hola que hubo como esta el mundo")
+
