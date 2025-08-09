@@ -57,3 +57,13 @@ function saludar(mesaje){
 //Llamada al procedimiento
 saludar("Hola que hubo como esta el mundo")
 
+//Funciones en JS
+
+//Declaramos la suma
+function suma(a, b){
+    let resultado = a+b
+    return resultado
+}
+
+// Llamamos o invocamos la funcion
+suma(3, 5)
