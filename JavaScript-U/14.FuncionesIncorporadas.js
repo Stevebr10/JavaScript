@@ -73,3 +73,13 @@ console.log(Math.abs(e))
 console.log(Math.abs(f))
 
 //REDONDEO Y TRUNCADO EN JS -------------------------------------------------------------------------
+let numero=10.5, redondeo, truncado
+
+//Redondeo -> Math.round() -> redondea el valor entero mas cercano, 0.5 o superior, redondea al valor 
+//superior entero mas cercano
+redondeo = Math.round(numero)
+console.log(redondeo)
+
+//Truncado -> Math.trunc() -> Elimina la parte flotante (parte decimal)
+truncado = Math.trunc(numero)
+console.log(truncado)
