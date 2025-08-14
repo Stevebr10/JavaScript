@@ -36,6 +36,7 @@ function imprimirSuma(a,b){
 
 //Llamada al procedimiento
 imprimirSuma(5,6)
+console.log(imprimirSuma(5,6))
 
 //Tipos de funciones
 //Fucniones declarativas: Son las funciones que se definen con la palabra clave function
