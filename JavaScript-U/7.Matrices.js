@@ -62,4 +62,6 @@ for(let i=0; i<inventario.length; i++){
 }
 
 //Sintaxis simplificada de la matriz
-let matriz2 = [[100,200,300],[400,500,600]]
+let matriz2 = [[100,200,300],[400,500]]
+
+console.table(matriz2)
