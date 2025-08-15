@@ -38,3 +38,38 @@ console.log(persona1.saludar()) //Hola, mi nombre es Juan1 y tengo 30 años. und
 //NOTA: En una funcion en JS si no tiene el return, se devuleve automaticamente el undefined
 
 
+//CREACION DE OBJETOS EN JS ----------------------------------------------------------------------------
+//Una de las forma de crear un objeto es la siguiente
+
+let persona3 = {
+    nombre: "Juan3",
+    edad: 19,
+    profesion: "Desarrollador"
+}
+
+//Tambien se puede reservar el espacio en memoria utlizando la palabra new Object();
+// Despues se definen sus atributos o propiedades con nombreObjeto.NombrePropiedad= "contenido de la propiedad"
+
+let persona4 = new Object()
+persona4.nombre = "Juan4"
+persona4.edad = 25
+persona4.profesion = "Desarrollador"
+
+console.log(persona4.nombre) //Juan4
+
+//ACCEDER A LAS PROPIEDADES DE LOS OBJETOS ----------------------------------------------------------------
+//Podemos acceder de la siguiente forma
+console.log(persona4.profesion)
+//podemos acceder en forma de un arreglo
+console.log(persona4["edad"])
+console.log(persona4["nombre"], persona4["profesion"])
+console.log(`Mi nombre es ${persona4["nombre"]} y tengo ${persona4.edad} años`)
+
+//Utilizamos un for para recorrer las propiedades del objeto -> FOR IN
+for (let propiedad in persona4) {
+    console.log(`La propiedad ${propiedad} tiene el valor ${persona4[propiedad]}`);
+}
+for(let propiedadesP in persona4){
+    console.log(propiedadesP)
+    console.log(persona4[propiedadesP])
+}
