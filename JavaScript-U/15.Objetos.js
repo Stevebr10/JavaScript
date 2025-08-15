@@ -73,3 +73,19 @@ for(let propiedadesP in persona4){
     console.log(propiedadesP)
     console.log(persona4[propiedadesP])
 }
+
+//AGREGAR Y ELIMINAR PROPIEDADES DE UN OBJETO ----------------------------------------------------------------
+//Agregamos una nueva propiedad
+persona4.ciudad = "Quito"
+console.log(persona4)
+//Elminiamos la propiedad creada
+delete persona4.ciudad
+console.log(persona4)
+
+//OTRAS FORMAS DE IMPRIMIR UN OBJETO
+console.log("OTRAS FORMAS DE IMPRIMIR UN OBJETO")
+let personaArray = Object.values(persona4) //Devuelve un arreglo con los valores del objeto
+console.log(personaArray)
+
+let personaString = JSON.stringify(persona4) //Convierte el objeto a una cadena JSON
+console.log(personaString)
