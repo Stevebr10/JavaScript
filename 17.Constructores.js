@@ -37,3 +37,15 @@ class Persona1 {
 const p2 = new Persona1("Mario", 30)
 p2.mostrarInfo();
 console.log(p2.nombreCompleto())
+
+//FORMAS DE CREAR UN OBJETO ---------------------------------------------------------------------
+let miObjeto = new Object() // Forma constructora
+let miObjeto2 = {} // Forma literal
+
+let miCadena = new String("Hola") // Forma constructora
+let miCadena2 = "Hola" // Forma literal
+
+let mifuncion = new Function("a", "b", "return a + b;") // Forma constructora
+let mifuncion2 = function(a, b) {
+    return a + b;
+}; // Forma literal

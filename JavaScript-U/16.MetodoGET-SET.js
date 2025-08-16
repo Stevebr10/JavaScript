@@ -39,7 +39,7 @@ let persona1 = {
     }
 }
 
-console.log(persona1.lang) //Muestra el idioma en mayusculas
+console.log(persona1.lang) //Muestra el idioma en mayusculas - No es necesario colocar los ()
 persona1.lang = "en" //Cabiamos el idioma al ingles
 console.log(persona1.lang) //Muestra el idioma en mayusculas
 console.log(persona1.idioma)
