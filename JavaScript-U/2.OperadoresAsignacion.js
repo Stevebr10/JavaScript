@@ -7,27 +7,27 @@ minumero=20;
 console.log('el resultado es: '+ minumero);
 
 //Operador +=
-minumero += 5
+minumero += 5 // suma 5 al valor actual de minumero, minumero = minumero + 5
 console.log(minumero)
 
 //Operador -=
-minumero -= 3
+minumero -= 3 // resta 3 al valor actual de minumero, minumero = minumero - 3
 console.log(minumero)
 
 //Operador *=
-minumero *= 2
+minumero *= 2 // multiplica por 2 al valor actual de minumero, minumero = minumero * 2
 console.log(minumero)
 
 //Operador /=
-minumero /= 4
+minumero /= 4 // divide entre 4 al valor actual de minumero, minumero = minumero / 4
 console.log(minumero)
 
 //Operador %=
-minumero %= 2
+minumero %= 2 // obtiene el residuo de la division entre 2 al valor actual de minumero, minumero = minumero % 2 
 console.log(minumero)
 
 //Exponente **
-minumero **=2
+minumero **=2 // eleva al cuadrado el valor actual de minumero, minumero = minumero ** 2
 console.log(minumero)
 
 //OPERADORES DE COMPARACION
