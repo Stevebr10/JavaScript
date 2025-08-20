@@ -137,3 +137,44 @@ function main() {
 
     ws.end();
 }
+
+//-------------------------------------------------------------------------------------------
+
+
+/*
+ * Complete the 'diagonalDifference' function below.
+ *
+ * The function is expected to return an INTEGER.
+ * The function accepts 2D_INTEGER_ARRAY arr as parameter.
+ */
+
+function diagonalDifference(arr) {
+    // Write your code here
+    let diagonalD =0
+    let diagonalI =0
+    for(let i=0; i<arr.length; i++){
+        diagonalD += arr[i][i]
+        diagonalI += arr[i][arr[i].length-1-i] 
+    }
+    let result = Math.abs(diagonalD-diagonalI)
+    return result
+   
+}
+
+function main() {
+    const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
+
+    const n = parseInt(readLine().trim(), 10);
+
+    let arr = Array(n);
+
+    for (let i = 0; i < n; i++) {
+        arr[i] = readLine().replace(/\s+$/g, '').split(' ').map(arrTemp => parseInt(arrTemp, 10));
+    }
+
+    const result = diagonalDifference(arr);
+
+    ws.write(result + '\n');
+
+    ws.end();
+}
