@@ -40,3 +40,11 @@ console.log(persona3.nombreCompleto.call(persona2, "Lic.", "0986756543"))
 // En este caso, usamos call para invocar nombreCompleto de persona3, pero con el contexto de persona2
 // y le pasamos los argumentos titulo y telefono.
 // Esto es especialmente útil para reutilizar métodos entre diferentes objetos sin necesidad de duplicar código.
+
+//--------------------------------------------------------------------------------------------------
+// METODO APPLY
+// apply es similar a call, pero en lugar de pasar los argumentos uno por uno, los pasas como un array.
+// Sintaxis -> funcion.apply(thisArg, [argsArray])
+// Ejemplo:
+console.log('\n USO DE APPLY \n')
+console.log(persona3.nombreCompleto.apply(persona2, ["Sra.", "0998765432"]))
