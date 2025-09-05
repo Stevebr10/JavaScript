@@ -9,3 +9,34 @@
 // thisArg → el objeto que quieres que se use como this.
 // arg1, arg2, ... → argumentos que le pasas a la función.
 
+let persona1= {
+    nombre: "Juan",
+    apellido: "Perez",
+    nombreCompleto: function(){
+        return this.nombre + ' ' + this.apellido
+    }
+}
+
+let persona2= {
+    nombre: "Carlos",
+    apellido: "Mejia",
+   
+}
+
+// Usando call para que persona2 use el metodo de persona1
+console.log(persona1.nombreCompleto())
+console.log(persona1.nombreCompleto.call(persona2))
+
+// Ejemplo con argumentos
+let persona3 = {
+    nombre: "Ana",
+    apellido: "Gomez",
+    nombreCompleto: function(titulo, telefono){
+        return this.nombre + ' ' + this.apellido + ' ' + titulo + ' ' + telefono
+    }
+}
+console.log(persona3.nombreCompleto("Ing,", "2777567"))
+console.log(persona3.nombreCompleto.call(persona2, "Lic.", "0986756543"))
+// En este caso, usamos call para invocar nombreCompleto de persona3, pero con el contexto de persona2
+// y le pasamos los argumentos titulo y telefono.
+// Esto es especialmente útil para reutilizar métodos entre diferentes objetos sin necesidad de duplicar código.
