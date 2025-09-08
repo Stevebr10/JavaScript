@@ -31,6 +31,13 @@ class Persona {
     nombreCompleto(){
         return this.nombre + ' ' + this.apellido + ' ' + this.edad
     }
+    //Sobreescritura el metodo de la clase padre
+    toString(){
+        //Se aplica polimorfismo (multiples formas en tiempo de ejecucion)
+        //el polimorfismo es la capacidad que tiene un objeto de tomar muchas formas
+        //El metodo que se ejecuta depende si es una referencia de tipo padre o hija
+        return this.nombreCompleto()
+    }
 }
 
 class Empleado extends Persona {
@@ -56,3 +63,21 @@ console.log(empleado1.getApellido)
 console.log(empleado1.getEdad)
 console.log(empleado1.getDepartamento)
 console.log(empleado1.nombreCompleto())
+console.log(empleado1.toString()) //Se ejecuta el toString de la clase hija
+
+let persona1 = new Persona('Ana', 'Diaz', 22)
+console.log(persona1.toString()) //Se ejecuta el toString de la clase padre
+
+// el polimorfismo es la capacidad que tienen los métodos o funciones de comportarse de
+//  manera diferente dependiendo del objeto que los use, aunque compartan el mismo nombre.
+// En otras palabras: un mismo método puede tener distintos comportamientos según la clase u objeto.
+
+//📌 Tipos principales
+
+// Polimorfismo por sobrecarga (Overloading)
+// Ocurre cuando dos métodos tienen el mismo nombre pero distintos parámetros.
+// En JavaScript esto no existe directamente (sí en Java, C#, etc.), pero se puede simular.
+
+// Polimorfismo por sobrescritura (Overriding)
+// Ocurre cuando una clase hija redefine un método de la clase padre con un comportamiento diferente.
+// Este sí se usa mucho en JavaScript, Python, Java, etc.
