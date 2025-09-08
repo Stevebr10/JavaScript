@@ -157,11 +157,20 @@ console.log(Persona1.contadorPersonas) //2
 class Persona2 {
     static contadorPersonas = 0 //Atributo estatico
 
+    static get MAX_OBJ(){ // Constante
+        return 5
+    }
+
     constructor(nombre, apellido, edad){
         this.nombre = nombre
         this.apellido = apellido
         this.edad = edad
-        this.idePersona = ++Persona2.contadorPersonas
+        //this.idePersona = ++Persona2.contadorPersonas
+        if(Persona2.contadorPersonas < Persona2.MAX_OBJ){
+            this.idePersona = ++Persona2.contadorPersonas
+        }else{
+            console.log('Se ha superado el maximo de objetos permitidos')
+        }
     }
     get getNombre(){
         return this.nombre
@@ -216,3 +225,5 @@ console.log(persona1A.toString())
 
 let empleado1A = new Empleado2('Camila', 'Delgado', 32, 'Ventas')
 console.log(empleado1A.toString())
+
+console.log(Persona2.MAX_OBJ)
