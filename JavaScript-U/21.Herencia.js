@@ -28,6 +28,9 @@ class Persona {
     set setEdad(edad){
         return this.edad = edad
     }
+    nombreCompleto(){
+        return this.nombre + ' ' + this.apellido + ' ' + this.edad
+    }
 }
 
 class Empleado extends Persona {
@@ -41,9 +44,15 @@ class Empleado extends Persona {
     set setDepartamento(departamento){
         return this.departamento = departamento
     }
+
+    //Sobreescritura
+    nombreCompleto(){
+        return super.nombreCompleto() + ' ' + this.departamento
+    }
 }
 let empleado1 = new Empleado('Luis', 'Gomez', 28, 'Sistemas')
 console.log(empleado1.getNombre)
 console.log(empleado1.getApellido)
 console.log(empleado1.getEdad)
 console.log(empleado1.getDepartamento)
+console.log(empleado1.nombreCompleto())
