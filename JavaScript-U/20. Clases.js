@@ -42,3 +42,52 @@ console.log(persona1)
 console.log(persona1.nombreCompleto())
 
 //METODO GET Y SET
+//Get -> obtener un valor
+//Set -> modificar o establecer un valor
+
+class Persona2 {
+    constructor(nombre, apellido, edad){
+        this.nombre = nombre
+        this.apellido = apellido
+        this.edad = edad
+    }
+    //Metodo
+    nombreCompleto(){
+        return this.nombre + ' ' + this.apellido + ' ' + this.edad
+
+    }
+    //GET
+    get getNombre(){
+        return this.nombre
+    }
+    //SET
+    set setNombre(nombre){
+        return this.nombre = nombre
+    }
+
+}
+let persona2 = new Persona2('Carlos', 'Lara', 25)
+console.log(persona2)
+console.log(persona2.nombreCompleto())
+console.log(persona2.getNombre) //Acceder al get
+persona2.setNombre = 'Roberto' //Modificar el nombre con el set
+console.log(persona2.getNombre) //Acceder al get nuevamente para ver el cambio
+console.log(persona2.nombreCompleto()) //Ver el nombre completo con el nuevo nombre
+
+//HOISTING NO APLICA EN LAS CLASES
+//No puedo hacer esto -> const p1 = new Persona3('Ana', 'Gomez', 28)
+// class Persona3 {
+//     constructor(nombre, apellido, edad){
+//         this.nombre = nombre
+//         this.apellido = apellido
+//         this.edad = edad     
+//     }
+//     //Metodo
+//     nombreCompleto(){
+//         return this.nombre + ' ' + this.apellido + ' ' + this.edad   
+//     }
+// }
+// const p1 = new Persona3('Ana', 'Gomez', 28)
+// console.log(p1)
+// console.log(p1.nombreCompleto()) 
+//Si hago esto, me da error porque las clases no tienen hoisting
