@@ -68,7 +68,7 @@ class Cliente extends Persona {
     
     constructor(nombre, apellido, edad, fechaRegistro) {
         super(nombre, apellido, edad) //Llama al constructor de la clase padre
-        this.id_Cliente = ++Cliente.contadorClientes
+        this.idCliente = ++Cliente.contadorClientes
         //this.fechaRegistro = new Date(fechaRegistro) //Atributo de tipo fecha
         this.fechaRegistro = new Date() //Fecha actual
     }
@@ -103,3 +103,6 @@ console.log(empleado1.toString())
 let empleado2 = new Empleado('Maria', 'Huaraca', 33, 5000)
 console.log(empleado2.toString())
 console.log(empleado2.id_Empleado)
+
+let cliente1 = new Cliente('Karla', 'Gomez', 38, new Date())
+console.log(cliente1.toString())
