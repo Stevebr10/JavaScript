@@ -115,9 +115,54 @@ class Computadora {
         return this.raton = raton
     }
     toString(){
-        return `ID Computadora: ${this.idComputadora}, Nombre: ${this.nombre}
-        \n\t${this.monitor.toString()}
-        \n\t${this.teclado.toString()}
-        \n\t${this.raton.toString()}`
+        return `ID Computadora: ${this.idComputadora}, Nombre: ${this.nombre} 
+        ${this.monitor.toString()} 
+        ${this.teclado.toString()}
+        ${this.raton.toString()}`
     }
 }
+
+class Orden {
+    static contadorOrdenes = 0
+    
+    constructor(){
+        this.idOrden = ++Orden.contadorOrdenes
+        this.computadoras = []
+    }
+    get id_Orden(){
+        return this.idOrden
+    }
+    agregarComputadora(computador){
+        this.computadoras.push(computador)
+    }
+    mostrarOrden(){
+        let computadoraOrden = ''
+        for(let computadora of this.computadoras){
+            computadoraOrden += '\n'+computadora.toString()
+        }
+        console.log(`Orden: ${this,this.idOrden}, Computadoras: ${computadoraOrden}`)
+    }
+}
+
+//Pruebas
+let raton1 = new Raton('USB', 'HP')
+console.log(raton1.toString())
+let raton2 = new Raton('Bluetooth', 'Dell')
+console.log(raton2.toString())
+let teclado1 = new Teclado('USB', 'Genius')
+console.log(teclado1.toString())
+let teclado2 = new Teclado('Bluetooth', 'Apple')
+console.log(teclado2.toString())
+let monitor1 = new Monitor('Samsung', 15)
+console.log(monitor1.toString())
+let monitor2 = new Monitor('LG', 20)
+console.log(monitor2.toString())
+let computadora1 = new Computadora('HP', monitor1, teclado1, raton1)
+console.log(computadora1.toString())
+let computadora2 = new Computadora('Gamer', monitor2, teclado2, raton2)
+console.log(computadora2.toString())
+let orden1 = new Orden()
+orden1.agregarComputadora(computadora1)
+orden1.agregarComputadora(computadora2)
+orden1.mostrarOrden()
+
