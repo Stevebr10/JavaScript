@@ -40,5 +40,15 @@ setTimeout(()=> console.log("Saludo asincrono despues de 5 segundos"), 5000) //d
 //Es una funcion que se ejecuta de manera repetitiva cada cierto tiempo
 //Recibe dos parametros: una funcion y un tiempo en milisegundos
 //Ejemplo:
+let reloj = () => {
+    let fecha = new Date()
+    console.log(`${fecha.getHours()}:${fecha.getMinutes()}:${fecha.getSeconds()}`)
+}
+
+//setInterval(reloj, 1000) //cada segundo
+setInterval(()=> {
+    let fecha = new Date()
+    console.log(`${fecha.getHours()}:${fecha.getMinutes()}:${fecha.getSeconds()}`)
+}, 5000) //cada 5 segundos
 
 
