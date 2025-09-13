@@ -6,9 +6,18 @@
     <title>Ejemplo DOM con JavaSript</title>
 </head>
 <body>
-    <h1>Ejemplo DOM con JS</h1>
-    <p>Saludos</p>
+    <h1 id="cabecero">Ejemplo DOM con JS</h1>
+    <p id="parrafo">Saludos</p>
     <script>
+        // innerHTML: Permite obtener o establecer el contenido HTML de un elemento.
+        //document: Es el objeto principal que representa el documento HTML cargado en el navegador.
+        //getElementById: Es un método del objeto document que se utiliza para seleccionar un elemento 
+        // HTML por su atributo id.
+        let cabecero = document.getElementById("cabecero").innerHTML;
+        console.log("valor cabecero :" + cabecero)
+        let parrafo = document.getElementById("parrafo").innerHTML
+        console.log("valor parrafo :" + parrafo)
+
         console.log("Saludos desde JS")
     </script>
 </body>
