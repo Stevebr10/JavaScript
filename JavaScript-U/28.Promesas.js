@@ -79,3 +79,37 @@ llamadaAPI
 .then((mensaje)=>{console.log(mensaje)})
 .catch((mensaje)=>{console.log(mensaje)})
 .finally(()=>{console.log("Termino la llamada a la API")})
+
+//PALABRA ASYNC Y AWAIT
+//La palabra reservada async se usa para definir una funcion asincrona
+//La palabra reservada await se usa para esperar a que una promesa se cumpla
+
+//Ejemplo 5:
+//async indica que una funcion retorna una promesa, es decir, que es una funcion asincrona
+//await se usa para esperar a que una promesa se cumpla antes de continuar con la ejecucion del codigo
+//En este ejemplo, la funcion asincrona llamada funcionAsincrona espera a que la promesa se cumpla
+// antes de mostrar el mensaje en consola
+async function funcionAsincrona(){
+    return "Funcion asincrona cumplida"
+}
+funcionAsincrona().then(mensaje => console.log(mensaje))
+
+async function funcionConAwait(){
+    let promesa = new Promise((resolve) => {
+        setTimeout(()=> resolve("Promesa con await cumplida despues de 2 segundos"), 2000)
+    })
+    let mensaje = await promesa
+    console.log(mensaje)
+
+}
+funcionConAwait()
+
+//Ejemplo 6:
+async function funcionConPromesayAwait() {
+    let miPromesa = new Promise(resolve => {
+        resolve("Promesa con await y promesa cumplida")
+    })
+    console.log(await miPromesa) //No es ncesario usar then ya que se usa await para esperar 
+    // a que se cumpla la promesa antes de continuar con la ejecucion del codigo
+    
+}
