@@ -122,3 +122,8 @@ async function funcionConPromesaAwaitTimeout() {
     console.log(await miPromesa)
 }
 funcionConPromesaAwaitTimeout()
+
+//NOTA: La palabra reservada async se usa para definir una funcion asincrona
+//La palabra reservada await se usa para esperar a que una promesa se cumpla
+//La palabra reservada await solo se puede usar dentro de una funcion asincrona
+//La palabra reservada await hace que la ejecucion del codigo se detenga hasta que la promesa se cumpla
