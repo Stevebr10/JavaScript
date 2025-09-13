@@ -13,11 +13,12 @@
         //document: Es el objeto principal que representa el documento HTML cargado en el navegador.
         //getElementById: Es un método del objeto document que se utiliza para seleccionar un elemento 
         // HTML por su atributo id.
-        let cabecero = document.getElementById("cabecero").innerHTML;
-        console.log("valor cabecero :" + cabecero)
-        let parrafo = document.getElementById("parrafo").innerHTML
-        console.log("valor parrafo :" + parrafo)
-
+        let cabecero = document.getElementById("cabecero");
+        console.log("valor cabecero :" + cabecero.innerHTML)
+        let parrafo = document.getElementById("parrafo")
+        console.log("valor parrafo :" + parrafo.innerHTML)
+        parrafo.innerHTML = "Nuevo valor del parrafo"
+        cabecero.innerHTML = "Nuevo valor del cabecero"
         console.log("Saludos desde JS")
     </script>
 </body>
