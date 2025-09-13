@@ -113,3 +113,12 @@ async function funcionConPromesayAwait() {
     // a que se cumpla la promesa antes de continuar con la ejecucion del codigo
     
 }
+
+//Ejemplo 7:
+async function funcionConPromesaAwaitTimeout() {
+    let miPromesa = new Promise( resolve =>{
+        setTimeout(() => resolve('Promesa con await y timeout cumplida despues de 3 segundos'), 3000)
+    })
+    console.log(await miPromesa)
+}
+funcionConPromesaAwaitTimeout()
