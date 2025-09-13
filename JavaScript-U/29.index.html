@@ -8,6 +8,8 @@
 <body>
     <h1 id="cabecero">Ejemplo DOM con JS</h1>
     <p id="parrafo">Saludos</p>
+    <p id="parrafo1">Otro Parrafo</p>
+    <p id="parrafo2">Otro parrafo 2</p>
     <script>
         // innerHTML: Permite obtener o establecer el contenido HTML de un elemento.
         //document: Es el objeto principal que representa el documento HTML cargado en el navegador.
@@ -20,6 +22,14 @@
         parrafo.innerHTML = "Nuevo valor del parrafo"
         cabecero.innerHTML = "Nuevo valor del cabecero"
         console.log("Saludos desde JS")
+        //Metodo getElementsByTagName: Permite seleccionar todos los elementos de un tipo específico 
+        // en el documento HTML. y devuelve una colección HTML (HTMLCollection) de esos elementos.
+        let parrafos = document.getElementsByTagName("p")
+        console.log("Cantidad de parrafos: " + parrafos.length)
+        for (let i=0; i < parrafos.length; i++){
+            console.log("Parrafo " + i + ": " + parrafos[i].innerHTML)
+        }
+
     </script>
 </body>
 </html>
