@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Formulario con JavaSript</title>
+</head>
+<body>
+    <!--Formulario HTML-->
+    <form id="formulario">
+        <!--input sirve para crear campos de entrada de datos en un formulario-->
+        <!--type="text" indica que es un campo de texto-->
+        <!--name es el nombre del campo que se enviará al servidor-->
+        <!--value es el valor por defecto del campo-->
+        Nombre: <input type="text" name="nombre" value="Juan"/><br/>
+        Apellido: <input type="text" name="apellido" value="Perez"/> <br/>
+        <div id="resultado"></div>
+    </form>
+    <button onclick="mostrarValores()">Mostrar</button>
+    <script>
+        function mostrarValores(){
+            let formulario = document.forms["formulario"]
+            let texto = ""
+            for(let formularioElemento of formulario){
+                texto += formularioElemento.value + "<br/>"
+            }
+            //console.log(texto)
+            document.getElementById("resultado").innerHTML = texto
+
+        }
+    </script>
+
+</body>
+</html>
