@@ -16,7 +16,7 @@
         Apellido: <input type="text" name="apellido" value="Perez"/> <br/>
         <div id="resultado"></div>
     </form>
-    <button onclick="mostrarValores()">Mostrar</button>
+    <button onclick="mostrarValores1()">Mostrar</button>
     <script>
         function mostrarValores(){
             let formulario = document.forms["formulario"]
@@ -28,6 +28,17 @@
             document.getElementById("resultado").innerHTML = texto
 
         }
+        console.log("Accediendo a los elementos del formulario")
+         function mostrarValores1(){
+            let formulario = document.forms["formulario"]
+            let texto = ""
+            let nombre = formulario["nombre"]
+            let apellido = formulario["apellido"]
+            texto = "Nombre: " + nombre.value + "<br/>" + "Apellido: " + apellido.value
+            document.getElementById("resultado").innerHTML = texto
+
+        }
+
     </script>
 
 </body>
