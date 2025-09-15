@@ -46,6 +46,15 @@
         for(let elemento of elementosAzules){
             console.log(`Elemento azul con for...of: ${elemento.innerHTML}`)
         }
+        //querySelector: Permite seleccionar el primer elemento que coincide con un selector CSS especificado
+        let primerParrafo = document.querySelector("p")
+        console.log("Primer parrafo con querySelector: " + primerParrafo.innerHTML)
+        let primerElementoAzul = document.querySelector(".azul")
+        console.log("Primer elemento con clase azul con querySelector: " + primerElementoAzul.innerHTML)
+        //querySelectorAll: Permite seleccionar todos los elementos que coninciden con un selector CSS
+        // especificado. Devuelve una NodeList de esos elementos.
+        let todosLosParrafos = document.querySelectorAll("p")
+        console.log("Cantidad de parrafos con querySelectorAll: " + todosLosParrafos.length)
 
     </script>
 </body>
