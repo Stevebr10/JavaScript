@@ -6,6 +6,7 @@
     <title>Ejemplo Formulario con JavaSript y Manejo del DOM</title>
 </head>
 <body>
+    <h1 id="titulo">Cambio de Contenido del DOM HTML</h1>
     <!--Formulario HTML-->
     <form id="formulario">
         <!--input sirve para crear campos de entrada de datos en un formulario-->
@@ -16,8 +17,10 @@
         Apellido: <input type="text" name="apellido" value="Perez"/> <br/>
         <div id="resultado"></div>
     </form>
-    <button onclick="mostrarValores2()">Mostrar</button>
+    <button onclick="mostrarValores3()">Mostrar</button>
+    <button onclick="Atras()">Atras</button>
     <script>
+        let tituloOriginal = document.getElementById("titulo").innerHTML
         function mostrarValores(){
             let formulario = document.forms["formulario"]
             let texto = ""
@@ -43,6 +46,12 @@
         //Ejemplo:
         function mostrarValores2(){
             document.write("Adios")
+        }
+        function mostrarValores3(){
+            document.getElementById("titulo").innerHTML = "Nuevo Titulo en el cambio del DOM HTML"
+        }
+        function Atras(){
+            document.getElementById("titulo").innerHTML = tituloOriginal
         }
 
 
