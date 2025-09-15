@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejemplo Formulario con JavaSript</title>
+    <title>Ejemplo Formulario con JavaSript y Manejo del DOM</title>
 </head>
 <body>
     <!--Formulario HTML-->
@@ -16,7 +16,7 @@
         Apellido: <input type="text" name="apellido" value="Perez"/> <br/>
         <div id="resultado"></div>
     </form>
-    <button onclick="mostrarValores1()">Mostrar</button>
+    <button onclick="mostrarValores2()">Mostrar</button>
     <script>
         function mostrarValores(){
             let formulario = document.forms["formulario"]
@@ -38,6 +38,13 @@
             document.getElementById("resultado").innerHTML = texto
 
         }
+        //Metodo document.write: Permite escribir contenido directamente en el documento HTML
+        //document.write("Saludos desde JS")
+        //Ejemplo:
+        function mostrarValores2(){
+            document.write("Adios")
+        }
+
 
     </script>
 
