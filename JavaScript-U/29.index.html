@@ -4,12 +4,17 @@
     <meta charset="UTF-8"> <!--  UTF-8 es un estándar de codificación de caracteres que incluye casi todos los caracteres y símbolos del mundo. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejemplo DOM con JavaSript</title>
+    <style>
+        .azul {
+            color: blue;
+        }
+    </style>
 </head>
 <body>
     <h1 id="cabecero">Ejemplo DOM con JS</h1>
-    <p id="parrafo">Saludos</p>
-    <p id="parrafo1">Otro Parrafo</p>
-    <p id="parrafo2">Otro parrafo 2</p>
+    <p id="parrafo" class="azul">Saludos</p>
+    <p id="parrafo1" class="azul">Otro Parrafo</p>
+    <p id="parrafo2" class="azul">Otro parrafo 2</p>
     <script>
         // innerHTML: Permite obtener o establecer el contenido HTML de un elemento.
         //document: Es el objeto principal que representa el documento HTML cargado en el navegador.
@@ -28,6 +33,18 @@
         console.log("Cantidad de parrafos: " + parrafos.length)
         for (let i=0; i < parrafos.length; i++){
             console.log("Parrafo " + i + ": " + parrafos[i].innerHTML)
+        }
+        //Metodo getElementsByClassName: Permite seleccionar todos los elementos que tienen una clase
+        // específica en el documento HTML. Devuelve una colección HTML (HTMLCollection) de esos elementos.
+        let elementosAzules = document.getElementsByClassName("azul")
+        console.log("Cantidad de elementos con clase azul: "+ elementosAzules.length)
+        for(let i=0; i < elementosAzules.length; i++){
+            console.log("Elemento azul " + i + ": " + elementosAzules[i].innerHTML)
+        }
+        //podemos usar otra sintaxis para recorrer los elementos de una colección HTML
+        //usando for...of que es más simple y legible
+        for(let elemento of elementosAzules){
+            console.log(`Elemento azul con for...of: ${elemento.innerHTML}`)
         }
 
     </script>
