@@ -13,12 +13,21 @@
     <!--Eventos de Formulario: submit, change, focus, blur-->
     <!--Eventos de Ventana: load, resize, scroll, unload-->
     <!-- <h1 onclick="this.innerHTML = 'Nuevo Titulo'">Manejo de Eventos con DOM HTML y JavaScript</h1> -->
-    <h1 onclick="cambiarTexto(this)">Manejo de Eventos con DOM HTML y JavaScript</h1>
+    <!-- <h1 onclick="cambiarTexto(this)">Manejo de Eventos con DOM HTML y JavaScript</h1> -->
+    <h1 id="titulo">Manejo del DOM con JavaScript</h1>
+    <div id="mostrar"></div>
     <script>
-        function cambiarTexto(titulo){
-            console.log(titulo)
-            console.log(titulo.innerHTML)
-            titulo.innerHTML = "Cambiamos a un Nuevo Titulo"
+        // function cambiarTexto(titulo){
+        //     console.log(titulo)
+        //     console.log(titulo.innerHTML)
+        //     titulo.innerHTML = "Cambiamos a un Nuevo Titulo"
+        // }
+        document.getElementById("titulo").onclick = cambiarTexto 
+        //En este caso no se pone parentesis porque se está asignando la función al evento onclick
+        //Si se ponen parentesis se ejecuta la función inmediatamente y no cuando se da click
+        function cambiarTexto(){
+            //document.getElementById("titulo").innerHTML = "Cambiamos a un nuevo titulo"
+            document.getElementById("mostrar").innerHTML = "Agregamos un nuevo contenido al div mostrar"
         }
     </script>
 </body>
