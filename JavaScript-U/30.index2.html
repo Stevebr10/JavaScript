@@ -20,11 +20,13 @@
     <button onclick="mostrarValores3()">Mostrar</button>
     <button onclick="Atras()">Atras</button> <br/>
     <button onclick="mostrarImagen()">Cambia de imagen</button>
+    <button onclick="cambiarColor()">Cambia de Color</button>
     <img id="imagen" src="http://globalmentoring.com.mx/imagenes/javascript.png"/>
     <script>
         let tituloOriginal = document.getElementById("titulo").innerHTML
         let imagenOriginal = document.getElementById("imagen").src
         let altImagen = false
+        let cambiarColorImg = false
 
         //Accediendo a los elementos del formulario
         function mostrarValores(){
@@ -69,6 +71,16 @@
                 altImagen = true
             }
 
+        }
+        function cambiarColor(){
+            if(cambiarColorImg ==true){
+                document.getElementById("titulo").style.color = "black"
+                cambiarColorImg = false
+            }else{
+                document.getElementById("titulo").style.color = "red"
+                cambiarColorImg = true
+            }
+            
         }
 
 

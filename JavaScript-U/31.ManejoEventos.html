@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo de Eventos </title>
+</head>
+<body>
+    <!--<h1>Manejo de Eventos con DOM HTML y JavaScript</h1>-->
+    <!--Tenemos varios tipos de eventos-->
+    <!--Eventos de Mouse: click, dblclick, mouseover, mouseout, mousemove-->
+    <!--Eventos de Teclado: keydown, keyup, keypress-->
+    <!--Eventos de Formulario: submit, change, focus, blur-->
+    <!--Eventos de Ventana: load, resize, scroll, unload-->
+    <!-- <h1 onclick="this.innerHTML = 'Nuevo Titulo'">Manejo de Eventos con DOM HTML y JavaScript</h1> -->
+    <h1 onclick="cambiarTexto(this)">Manejo de Eventos con DOM HTML y JavaScript</h1>
+    <script>
+        function cambiarTexto(titulo){
+            console.log(titulo)
+            console.log(titulo.innerHTML)
+            titulo.innerHTML = "Cambiamos a un Nuevo Titulo"
+        }
+    </script>
+</body>
+
+</html>
