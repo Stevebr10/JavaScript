@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo del DOM con JavaScript</title>
+</head>
+<body onload="cargarContenido()">
+    
+    <!--onload="cargarContenido()"-->
+    <!--onload es un evento que se ejecuta cuando se carga la página se utiliza para 
+    inicializar variables o cargar datos-->
+    <h1 id="titulo">Manejo del DOM con JavaScript</h1>
+    <div id="mostrar"></div>
+    <!--Metodo onchange, nos permite detectar cambios en un elemento-->
+    <!-- es decir, se ejecuta una funcion cuando el valor del elemento cambia -->
+    <!--Ejemplo:-->
+    <form>
+        Nombre: <input type="text" name="nombre" onchange="convertirMayusculas(this)"><br/>
+    </form>
+        <!--this hace referencia al elemento que desencadena el evento-->
+        <!--En este caso el input del nombre-->
+        <!--Cuando se cambia el valor del input se ejecuta la funcion convertirMayusculas-->
+        <!--y se le pasa como parametro el elemento input-->
+        <!--La funcion convierte el valor del input a mayusculas-->
+        <!--y lo asigna de nuevo al valor del input-->
+        <!--De esta forma, cada vez que se cambia el valor del input, se convierte a mayusculas-->
+    <!--Evento onmouseout: este evento se ejecuta cuando el puntero del mouse sale del elemento-->
+    <!--Evento onmouseover: este evento se ejecuta cuando el puntero del mouse entra en el elemento-->
+    <!--Ejemplo:-->
+    <button onmouseover="rojo(this)" onmouseout="azul(this)">Cambia de Color</button>
+    <!--Cambiamos el color de fondo de boton usando eventos-->
+    <button onmouseover="verde(this)" onmouseout="naranja(this)" >Cambia de Color de Fondo</button>
+    <!--Evento onmousedown: este evento se ejecuta cuando se presiona el boton del mouse sobre el elemento-->
+    <!--Evento onmouseup: este evento se ejecuta cuando se suelta el boton del mouse sobre el elemento-->
+    <!--Ejemplo:-->
+    <h2 onmousedown="rojo(this)" onmouseup="azul(this)">Este es el Evento de onmousedown y onmouseup</h2>
+    <script>
+        function cargarContenido(){
+            alert("Bienvenido a la página")
+            alert("Cargando Contenido...")
+            let texto = ""
+            if(navigator.cookieEnabled){
+                texto = "Las cookies estan habilitadas"
+            }else{
+                texto = "Las cookies no estan habilitadas"
+            }
+            document.getElementById("mostrar").innerHTML = texto
+        }
+        function convertirMayusculas(nombreInput){
+            nombreInput.value = nombreInput.value.toUpperCase()
+        }
+        function rojo(elemento){
+            elemento.style.color = "red"
+        }
+        function azul(elemento){
+            elemento.style.color = "blue"
+        }
+        function verde(elemento){
+            elemento.style.backgroundColor = "green"
+        }
+        function naranja(elemento){
+            elemento.style.backgroundColor = "orange"
+        }
+    </script>
+
+    
+</body>
+</html>
