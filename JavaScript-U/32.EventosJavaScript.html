@@ -40,6 +40,9 @@
     palabras, el estado de un elemento que puede ser seleccionado para la entrada de datos-->
     <!--Ejemplo:-->
     Nombre: <input type="text" name="nombre" onfocus="celeste(this)" onblur="rosado(this)"><br/>
+    <!-- Apellido: <input type="text" name="apellido" id="apellido"><br/>  eso se usa sin el target-->
+     Apellido: <input type="text"  id="apellido"><br/>
+    Edad: <input type="text" name="edad" id="edad"><br/>
     <script>
         function cargarContenido(){
             alert("Bienvenido a la página")
@@ -73,6 +76,36 @@
         function rosado(elemento){
             elemento.style.backgroundColor = "pink"
         }
+
+        //ELmento addEventListener permite agregar un evento a un elemento
+        //sin tener que usar atributos en el html como onmouseover, onmouseout, etc
+        //Ejemplo:
+        document.getElementById("apellido").addEventListener("focus", marron)
+        document.getElementById("apellido").addEventListener("blur", amarrillo)
+        // function marron(){
+        //     //document.getElementById("apellido").style.backgroundColor = "brown"
+           
+        // }
+        function marron(evento){
+            let componente = evento.target //evento.target hace referencia al elemento que desencadena el evento
+            componente.style.backgroundColor = "brown" 
+        }
+        function amarrillo(evento){
+            let componente = evento.target
+            componente.style.backgroundColor = "yellow"
+        }
+
+        document.getElementById("edad").addEventListener("focus", gris)
+        document.getElementById("edad").addEventListener("blur", oro)
+        
+        function gris(){
+            document.getElementById("edad").style.backgroundColor = "gray"
+        }
+        function oro(){
+            document.getElementById("edad").style.backgroundColor = "gold"
+        }
+
+
     </script>
 
     
