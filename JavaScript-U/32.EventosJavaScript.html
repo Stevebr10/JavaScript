@@ -41,8 +41,9 @@
     <!--Ejemplo:-->
     Nombre: <input type="text" name="nombre" onfocus="celeste(this)" onblur="rosado(this)"><br/>
     <!-- Apellido: <input type="text" name="apellido" id="apellido"><br/>  eso se usa sin el target-->
-     Apellido: <input type="text"  id="apellido"><br/>
+    Apellido: <input type="text"  id="apellido"><br/>
     Edad: <input type="text" name="edad" id="edad"><br/>
+    Direccion: <input type="text" id="direccion"><br/>
     <script>
         function cargarContenido(){
             alert("Bienvenido a la página")
@@ -104,6 +105,15 @@
         function oro(){
             document.getElementById("edad").style.backgroundColor = "gold"
         }
+
+        document.getElementById("direccion").addEventListener("focus",(evento)=>{
+            let componente = evento.target
+            componente.style.backgroundColor = "purple"
+        })
+        document.getElementById("direccion").addEventListener("blur", (evento)=>{
+            let componente = evento.target
+            componente.style.backgroundColor = "orange"
+        })
 
 
     </script>
