@@ -44,6 +44,11 @@
     Apellido: <input type="text"  id="apellido"><br/>
     Edad: <input type="text" name="edad" id="edad"><br/>
     Direccion: <input type="text" id="direccion"><br/>
+    <form id="formulario">
+        telefono: <input type="text" id="telefono"><br/>
+        email: <input type="text" id="email"><br/>
+
+    </form>
     <script>
         function cargarContenido(){
             alert("Bienvenido a la página")
@@ -115,6 +120,17 @@
             componente.style.backgroundColor = "orange"
         })
 
+        //Usando un formulario
+        const formulario = document.getElementById("formulario")
+        formulario.addEventListener("focus", (evento)=>{
+            evento.target.style.backgroundColor = "lightgreen"
+        }, true) //el tercer parametro es para que el evento se ejecute en la fase de captura
+        //si no se pone el tercer parametro, el evento se ejecuta en la fase de burbuja
+        //la fase de captura es cuando el evento se propaga desde el elemento padre hasta el elemento hijo
+        //la fase de burbuja es cuando el evento se propaga desde el elemento hijo hasta el elemento padre
+        formulario.addEventListener("blur", (evento)=>{
+            evento.target.style.backgroundColor = "white"
+        }, true) //el tercer parametro es para que se aplique a los elementos hijos del formulario
 
     </script>
 
