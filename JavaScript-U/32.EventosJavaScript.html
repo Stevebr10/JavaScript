@@ -35,6 +35,11 @@
     <!--Evento onmouseup: este evento se ejecuta cuando se suelta el boton del mouse sobre el elemento-->
     <!--Ejemplo:-->
     <h2 onmousedown="rojo(this)" onmouseup="azul(this)">Este es el Evento de onmousedown y onmouseup</h2>
+    <!--Eventos onfocus y onblur: onfocus se ejecuta cuando el elemento recibe el foco y onblur cuando lo
+    pierde, en este caso, no referimos a foco como el estado de un elemento que puede recibir, en otras 
+    palabras, el estado de un elemento que puede ser seleccionado para la entrada de datos-->
+    <!--Ejemplo:-->
+    Nombre: <input type="text" name="nombre" onfocus="celeste(this)" onblur="rosado(this)"><br/>
     <script>
         function cargarContenido(){
             alert("Bienvenido a la página")
@@ -61,6 +66,12 @@
         }
         function naranja(elemento){
             elemento.style.backgroundColor = "orange"
+        }
+        function celeste(elemento){
+            elemento.style.backgroundColor = "lightblue"
+        }
+        function rosado(elemento){
+            elemento.style.backgroundColor = "pink"
         }
     </script>
 
