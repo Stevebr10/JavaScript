@@ -13,6 +13,8 @@ function mostrarPersonas(){
     for(let persona of personas){
         //texto += `Nombre: ${persona.getNombre}, Apellido: ${persona.getApellido}\n`
         console.log(persona)
+        texto += `<li>${persona.getNombre} ${persona.getApellido}</li>`
     }
     //console.log(texto)
+    document.getElementById("personas").innerHTML = texto
 }
