@@ -22,8 +22,22 @@
             <!-- <h2>Hola </h2> -->
             <ul id="personas">
             <!-- <li></li> -->
-        </ul>
+            </ul>
         </div>
+    </div>
+    <div class="contenedor">
+        <div style="text-align: center;"> <!-- text-align: center; sirve para centrar el contenido -->
+            <!--cursor: pointer; sirve para cambiar el cursor a una mano cuando se pasa sobre el botón -->
+            <button style="cursor: pointer;" onclick="agregarPersona()">+</button>
+             <button style="cursor: pointer;" onclick="agregarPersona1()">++</button>
+        </div>
+        <!-- text-align: right; sirve para alinear el contenido a la derecha -->
+        <!-- si deseo colocar el boton en la parte derecha y arriba debo usar <div style="text-align: right;"> -->
+        
+        <form id="formulario">
+            <input type="text" id="nombre" placeholder="Nombre">
+            <input type="text" id="apellido" placeholder="Apellido">
+        </form>
     </div>
     <script src="js/38.persona.js"></script>
     <script src="js/37.app.js"></script>
