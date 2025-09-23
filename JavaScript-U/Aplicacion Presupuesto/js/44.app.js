@@ -31,8 +31,21 @@ let totalIngresos = () => { // Funcion que calcula el total de ingresos
 let cargarCabecero = () => { // Funcion que carga el cabecero de la pagina con los datos del presupuesto
     let presupuesto = totalIngresos() - totalEgresos()
     let porcentajeEgreso = totalEgresos() / totalIngresos()
-    document.getElementById('presupuesto').innerHTML = presupuesto
-    document.getElementById('porcentaje').innerHTML = porcentajeEgreso
-    document.getElementById('ingresos').innerHTML = totalIngresos()
-    document.getElementById('egresos').innerHTML = totalEgresos()
+    document.getElementById('presupuesto').innerHTML = formatoMoneda(presupuesto)
+    document.getElementById('porcentaje').innerHTML = formatoPorcentaje(porcentajeEgreso)
+    document.getElementById('ingresos').innerHTML = formatoMoneda(totalIngresos())
+    document.getElementById('egresos').innerHTML = formatoMoneda(totalEgresos())
+}
+
+const formatoMoneda = (valor) => { // Funcion que da formato de moneda a los valores
+    //toLocaleString es un metodo de los numeros que da forma a los numeros
+    //El primer parametro es el idioma y el segundo un objeto con las opciones de formato
+    // style: 'currency' indica que es una moneda
+    //currency: 'USD' indica que es dolares
+    //minimumFractionDigits: 2 indica que siempre muestre 2 decimales
+    return valor.toLocaleString('en-US', {style: 'currency', currency: 'USD', minimumFractionDigits: 2})
+
+}
+const formatoPorcentaje = (valor) =>{
+    return valor.toLocaleString('en-US', {style: 'percent', minimumFractionDigits: 2})
 }
