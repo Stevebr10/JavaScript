@@ -1,11 +1,13 @@
 const ingresos = [
     new Ingreso('Salario', 2100.00),
-    new Ingreso('Venta coche', 1513.00)
+    new Ingreso('Venta coche', 1513.00),
+    new Ingreso('Venta coche2', 1513.00)
 
 ]
 const egresos = [
     new Egreso('Renta departamento', 900.00),
-    new Egreso('Ropa', 1200.00)
+    new Egreso('Ropa', 1200.00),
+    new Egreso('Ropa2', 1200.00)
 ]
 
 let cargarApp = () => {  // Funcion que se ejecuta al iniciar la pagina el cual llama a otras funciones
@@ -67,12 +69,23 @@ const crearIngresoHTML = (ingreso) => { // Funcion que crea el HTML de un ingres
                         <div class="elemento_valor">${formatoMoneda(ingreso.getValor)}</div>
                         <div class="elemento_eliminar">
                             <button class="elemento_eliminar--btn">
-                                <ion-icon name="close-circle-outline"></ion-icon>
+                                <ion-icon name="close-circle-outline"
+                                onclick="eliminarIngreso(${ingreso.getID})"></ion-icon>
                             </button>
                         </div>
                     </div>
                 </div>`
     return ingresoHTML
+}
+
+const eliminarIngreso = (id) => {
+    ingresos.splice(ingresos.findIndex(ingreso => ingreso.id === id), 1)
+    //splice elimina un elemento de un arreglo
+    //findIndex encuentra el indice de un elemento en un arreglo
+    //ingreso => ingreso.id === id es una funcion flecha que compara el id del ingreso con el id pasado 
+    // como parametro y el 1 indica que se elimina un elemento
+    cargarCabecero() // Se recarga el cabecero para actualizar los valores
+    cargarIngresos()
 }
 
 const cargarEgresos = () => {
@@ -81,7 +94,7 @@ const cargarEgresos = () => {
     for(let egreso of egresos) {
         egresosHTML += crearEgresoHTML(egreso) // Llama a la funcion crearEgresoHTML y le pasa el objeto egreso
     }
-    document.getElementById('lista-egresos').innerHTML =egresosHTML
+    document.getElementById('lista-egresos').innerHTML = egresosHTML
 }
 
 crearEgresoHTML = (egreso) => {
@@ -89,14 +102,22 @@ crearEgresoHTML = (egreso) => {
     <div class="elemento limpiarEstilos">
                     <div class="elemento_descripcion">${egreso.getDescripcion}</div>
                     <div class="derecha limpiarEstilos">
-                        <div class="elemento_valor">${egreso.getValor}</div>
-                        <div class="elemento_porcentaje">21%</div>
+                        <div class="elemento_valor">${formatoMoneda(egreso.getValor)}</div>
+                        <div class="elemento_porcentaje">${formatoPorcentaje(egreso.getValor/totalIngresos())}</div>
                         <div class="elemento_eliminar">
                             <button class="elemento_eliminar--btn">
-                                <ion-icon name="close-circle-outline"></ion-icon>
+                                <ion-icon name="close-circle-outline"
+                                onclick="eliminarEgreso(${egreso.getID})"></ion-icon>
                             </button>
                         </div>
                     </div>
                 </div>`
     return egresoHTML
+}
+
+const eliminarEgreso = (id) => {
+    let indiceEliminar = egresos.findIndex(egreso => egreso.id === id)
+    egresos.splice(indiceEliminar, 1)
+    cargarCabecero()
+    cargarEgresos()
 }
