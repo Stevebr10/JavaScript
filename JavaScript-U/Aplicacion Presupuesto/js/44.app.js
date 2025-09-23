@@ -10,6 +10,7 @@ const egresos = [
 
 let cargarApp = () => {  // Funcion que se ejecuta al iniciar la pagina el cual llama a otras funciones
     cargarCabecero()
+    cargarIngresos()
 
 }
 
@@ -49,3 +50,27 @@ const formatoMoneda = (valor) => { // Funcion que da formato de moneda a los val
 const formatoPorcentaje = (valor) =>{
     return valor.toLocaleString('en-US', {style: 'percent', minimumFractionDigits: 2})
 }
+
+const cargarIngresos = () => {
+    let ingresosHTML = ''  // Variable para almacenar el HTML de los ingresos
+    for(let ingreso of ingresos) {
+        ingresosHTML += crearIngresoHTML(ingreso)
+    }
+    document.getElementById('lista-ingresos').innerHTML = ingresosHTML
+}
+const crearIngresoHTML = (ingreso) => { // Funcion que crea el HTML de un ingreso
+    let ingresoHTML = `
+     <div class="elemento limpiarEstilos">
+                    <div class="elemento_descripcion">${ingreso.getDescripcion}</div>
+                    <div class="derecha limpiarEstilos">
+                        <div class="elemento_valor">${formatoMoneda(ingreso.getValor)}</div>
+                        <div class="elemento_eliminar">
+                            <button class="elemento_eliminar--btn">
+                                <ion-icon name="close-circle-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>`
+    return ingresoHTML
+}
+
