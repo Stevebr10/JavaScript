@@ -78,7 +78,7 @@ const crearIngresoHTML = (ingreso) => { // Funcion que crea el HTML de un ingres
     return ingresoHTML
 }
 
-const eliminarIngreso = (id) => {
+let eliminarIngreso = (id) => {
     ingresos.splice(ingresos.findIndex(ingreso => ingreso.id === id), 1)
     //splice elimina un elemento de un arreglo
     //findIndex encuentra el indice de un elemento en un arreglo
@@ -115,9 +115,31 @@ crearEgresoHTML = (egreso) => {
     return egresoHTML
 }
 
-const eliminarEgreso = (id) => {
+let eliminarEgreso = (id) => {
     let indiceEliminar = egresos.findIndex(egreso => egreso.id === id)
     egresos.splice(indiceEliminar, 1)
     cargarCabecero()
     cargarEgresos()
+}
+
+let agregarDato = () =>{
+    let formulario = document.forms['formulario']
+    let tipo = formulario['tipo'].value
+    let descripcion = formulario['descripcion'].value
+    let valor = formulario['valor'].value
+    if(descripcion !=='' && valor !== ''){
+        if(tipo === 'ingreso'){
+            const ingreso = new Ingreso(descripcion, +valor) // El + convierte el valor a numero
+            ingresos.push(ingreso)
+            cargarCabecero()
+            cargarIngresos()
+        }else if(tipo === 'egreso'){
+            const egreso = new Egreso(descripcion, +valor)  //podemos usar Number(valor) en lugar de +valor
+            egresos.push(egreso)
+            cargarCabecero()
+            cargarEgresos()
+        }
+    }else{
+        alert("Debe ingresar una descripcion y un valor")
+    }
 }
