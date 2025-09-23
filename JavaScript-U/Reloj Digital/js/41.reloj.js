@@ -13,6 +13,10 @@ const mostrarReloj = () => {
     let mes =meses[fecha.getMonth()] //getMonth() devuelve el mes 0-11
     let fechaTexto = `${diaSemana}, ${dia} ${mes}`
     document.getElementById('fecha').innerHTML = fechaTexto
+
+    document.getElementById('contenedor').classList.toggle('animar')
+    //toggle sirve para añadir o quitar una clase de un elemento, en este caso la clase 'animar'
+    //classList sirve para acceder a la lista de clases de un elemento
     
 }
 

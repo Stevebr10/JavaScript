@@ -23,3 +23,8 @@
     letter-spacing: 10px; /*letter-spacing sirve para definir el espacio entre las letras*/
     font-size: 15px; /*font-size sirve para definir el tamaño de la fuente*/
 }
+
+.animar{
+    border: rgb(0, 0, 0) 2px solid /*border sirve para definir el borde del elemento, en este
+    caso un borde solido de 2px de grosor y color negro*/
+}
