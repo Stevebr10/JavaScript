@@ -20,5 +20,6 @@
 }
 
 #fecha{
-    
+    letter-spacing: 10px; /*letter-spacing sirve para definir el espacio entre las letras*/
+    font-size: 15px; /*font-size sirve para definir el tamaño de la fuente*/
 }
