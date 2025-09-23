@@ -1,16 +1,17 @@
 const ingresos = [
     new Ingreso('Salario', 2100.00),
-    new Ingreso('Venta coche', 1500.00)
+    new Ingreso('Venta coche', 1513.00)
 
 ]
 const egresos = [
     new Egreso('Renta departamento', 900.00),
-    new Egreso('Ropa', 400.00)
+    new Egreso('Ropa', 1200.00)
 ]
 
 let cargarApp = () => {  // Funcion que se ejecuta al iniciar la pagina el cual llama a otras funciones
     cargarCabecero()
     cargarIngresos()
+    cargarEgresos()
 
 }
 
@@ -74,3 +75,28 @@ const crearIngresoHTML = (ingreso) => { // Funcion que crea el HTML de un ingres
     return ingresoHTML
 }
 
+const cargarEgresos = () => {
+    let egresosHTML = ''  // Variable para almacenar el HTML de los egresos, esta variable captaura 
+    // el HTML de cada egreso y lo almacenara en esta variable
+    for(let egreso of egresos) {
+        egresosHTML += crearEgresoHTML(egreso) // Llama a la funcion crearEgresoHTML y le pasa el objeto egreso
+    }
+    document.getElementById('lista-egresos').innerHTML =egresosHTML
+}
+
+crearEgresoHTML = (egreso) => {
+    let egresoHTML = `
+    <div class="elemento limpiarEstilos">
+                    <div class="elemento_descripcion">${egreso.getDescripcion}</div>
+                    <div class="derecha limpiarEstilos">
+                        <div class="elemento_valor">${egreso.getValor}</div>
+                        <div class="elemento_porcentaje">21%</div>
+                        <div class="elemento_eliminar">
+                            <button class="elemento_eliminar--btn">
+                                <ion-icon name="close-circle-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>`
+    return egresoHTML
+}
