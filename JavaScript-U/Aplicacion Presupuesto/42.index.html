@@ -29,6 +29,26 @@
             </div>
         </div>
     </div>
+
+    <form id="formulario" onsubmit="return false"> 
+        <!--onsubmit="return false" evita que se recargue la pagina al enviar el formulario-->
+        <div class="agregar">
+            <div class="agregar_contenedor">
+                <select class="agregar_tipo" id="tipo">
+                    <option value="ingreso" selected>+</option>
+                    <option value="egreso" selected>-</option>
+                </select>
+                <input type="text" class="agregar_descripcion" placeholder="Agregar Descripcion" id="descripcion">
+                <!--step sirve para definir el incremento del valor en el input-->
+                <input type="number" class="agregar_valor" placeholder="Valor" id="valor" step="any">
+                <button class="agregar_btn" onclick="agregarDato()">
+                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                </button>
+            </div>
+        </div>
+
+    </form>
+
     <div class="contenedor limpiarEstilos">
         <div class="ingreso">
             <h2 class="ingreso_titulo">Ingresos</h2>
